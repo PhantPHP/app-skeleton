@@ -1,5 +1,29 @@
 # DDD skeleton
 
+
+## Stacks
+
+```
+							User
+					
+				 ∨						  ∧
+Request			  \						 /		Response
+				   \					/
+Middleware			\				   /		Template
+					 \				  /
+Controller			  \				 /			Controller
+					   \			/
+Action					\ 		   /			Action
+						 \		  /
+Manager					  \ 	 /				Manager
+						   \ 	/
+Adapter						\  /				Adapter
+							 \/
+						
+					  Data repository
+```
+
+
 ## Folder tree
 
 ```
@@ -23,7 +47,7 @@
 ```
 
 
-## Usage by folter
+## Usage by folder
 
 ### app
 
