@@ -44,6 +44,7 @@ Adapter						\  /				Adapter
 │       └── Template
 ├── config
 └── public
+└── tests
 ```
 
 
