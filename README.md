@@ -4,23 +4,23 @@
 ## Stacks
 
 ```
-							User
-					
-				 ∨						  ∧
-Request			  \						 /		Response
-				   \					/
-Middleware			\				   /		Template
-					 \				  /
-Controller			  \				 /			Controller
-					   \			/
-Action					\ 		   /			Action
-						 \		  /
-Manager					  \ 	 /				Manager
-						   \ 	/
-Adapter						\  /				Adapter
-							 \/
-						
-					  Data repository
+                            User
+                    
+                 ∨                        ∧
+Request           \                      /      Response
+                   \                    /
+Middleware          \                  /        View
+                     \                /
+Controller            \              /          Controller
+                       \            /
+Action                  \          /            Action
+                         \        /
+Manager                   \      /              Manager
+                           \    /
+Adapter                     \  /                Adapter
+                             \/
+                        
+                        Data repository
 ```
 
 
