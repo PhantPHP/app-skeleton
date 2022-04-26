@@ -1,2 +1,10 @@
 # Dependances
 /vendor/*
+
+# Test
+.phpunit*
+test/coverage/*
+
+# Dev
+.DS_Store
+.nova/*

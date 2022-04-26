@@ -1,0 +1,15 @@
+<phpunit bootstrap="vendor/autoload.php">
+	<testsuites>
+		<testsuite name="app">
+			<directory>test</directory>
+		</testsuite>
+	</testsuites>
+	<php>
+		<env name="APP_ENV" value="test"/>
+	</php>
+	<coverage processUncoveredFiles="true">
+		<include>
+			<directory suffix=".php">app/Domain</directory>
+		</include>
+	</coverage>
+</phpunit>

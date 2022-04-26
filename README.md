@@ -1,50 +1,46 @@
-# DDD skeleton
-
+# App skeleton
 
 ## Stacks
 
 ```
-                            User
+                        User
                     
-                 ∨                        ∧
-Request           \                      /      Response
-                   \                    /
-Middleware          \                  /        View
-                     \                /
-Controller            \              /          Controller
-                       \            /
-Action                  \          /            Action
-                         \        /
-Manager                   \      /              Manager
-                           \    /
-Adapter                     \  /                Adapter
-                             \/
+                 ∨                ∧
+Request           \              /      Response
+                   \            /
+Middleware          \          /        View
+                     \        /
+Controller            \      /          Controller
+                       \    /
+Service                 \  /            Service
+                         \/
                         
-                        Data repository
+                   Infrastructure
 ```
 
 
-## Folder tree
+## Folders tree
 
 ```
 .
 ├── app
 │   ├── Domain
-│   │   ├── Action
-│   │   ├── Entity
-│   │   ├── Exception
-│   │   ├── Manager
+│   │   ├── DataStructure
+│   │   │   └── Value
+│   │   ├── Error
 │   │   ├── Port
-│   │   └── ValueObject
+│   │   └── Service
 │   ├── Infrastructure
 │   │   ├── Adapter
-│   │   ├── Controller
-│   │   └── Middleware
+│   │   ├── Repository
+│   │   └── Source
 │   └── Presentation
+│       ├── Controller
+│       ├── Middleware
 │       └── Template
 ├── config
 └── public
-└── tests
+└── test
 ```
 
 
@@ -60,28 +56,22 @@ In this folder, we will find the application itself.
 Here is the domain you manage.
 
 
-##### Action
-
-Actions are accessible from outside your domain (your controllers). Each action must represent an action of the domain.
-
-Ex. : register a new user, confirm the order, etc.
-
-
-##### Entity
+##### DataStructure
 
 Entities are the representation of objects inherent to the domain.
 
 Ex. : User, Product, etc.
 
+###### Value
 
-##### Exception
+Value Objects are representations of data typed according to your domain.
 
-Exceptions are the representation of errors.
+Ex. : E-mail, Id, Price, etc.
 
 
-##### Manager
+##### Error
 
-Managers are in charge of carrying out each business action, for this they will have to use the adapters.
+Errors are the representation of errors.
 
 
 ##### Port
@@ -89,11 +79,12 @@ Managers are in charge of carrying out each business action, for this they will 
 Ports are the interfaces to which the adapters must be supported.
 
 
-##### ValueObject
+##### Service
 
-Value Objects are representations of data typed according to your domain.
+Services are accessible from outside your domain (your controllers). Each action must represent an action of the domain.
 
-Ex. : E-mail, Id, Price, etc.
+Ex. : register a new user, confirm the order, etc.
+
 
 
 #### Infrastructure
@@ -108,6 +99,12 @@ Adapters are the outgoing interfaces of your application.
 Ex. : database, APIs consumed, etc.
 
 
+
+#### Presentation
+
+In this folder, we find all the resources and processing inherent to rendering views (html, xml, etc.)
+
+
 ##### Controller
 
 Controllers are the inbound interfaces of your application.
@@ -119,12 +116,7 @@ Ex. : browser, API exposed, CLI, etc.
 
 Middlewares will take care of inbound and outbound access management.
 
-Ex. : token verification, error catching, etc.
-
-
-#### Presentation
-
-In this folder, we find all the resources and processing inherent to rendering views (html, xml, etc.)
+Ex. : access verification, error catching, etc.
 
 
 ##### Template
